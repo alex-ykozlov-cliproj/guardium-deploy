@@ -24,7 +24,7 @@ echo "New estap '${NAME_SUFFIX}' is provisioned. Now Waiting for the Load Balanc
 
 # Based on article: https://stackoverflow.com/questions/35179410/how-to-wait-until-kubernetes-assigned-an-external-ip-to-a-loadbalancer-service
 
-timeout 10s bash -c 'until oc get service/estap-guardium-estap-'${NAME_SUFFIX}'-lb --output=jsonpath='{.status.loadBalancer}' -n user1-bgd | grep "ingress"; do : ; done'
+timeout 100s bash -c 'until oc get service/estap-guardium-estap-'${NAME_SUFFIX}'-lb --output=jsonpath='{.status.loadBalancer}' -n user1-bgd | grep "ingress"; do : ; done'
 
 echo "LoadBalancer for the estap '${NAME_SUFFIX}' is ready. Here is the hostname:\n***"
 oc get service/estap-guardium-estap-${NAME_SUFFIX}-lb --output=jsonpath='{.status.loadBalancer.ingress[0].hostname}' -n user1-bgd 
