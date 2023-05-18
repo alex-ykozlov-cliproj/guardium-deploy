@@ -1,0 +1,26 @@
+name: guardium-estap-test-10 # Argo CD application resource name
+project: default # Argo CD project
+namespace: user1-bgd # Ensures namespace in destination cluster exists. 
+
+
+# This section contains the values for the helm chart
+values: |-
+  estap:
+    db:
+      host: "sqlserver02.database.windows.net"
+      port: 1433
+      type: "mssql"
+    guardium:
+      host: "20.246.81.102"
+    proxy:
+      listen_port: 1433
+    replicas: 1
+    serviceAccountName: default
+    fsGroup: 1000690000
+    uid: 1000690000
+  global:
+    imagePullPolicy: IfNotPresent
+    dockerRegistryPrefix: "icr.io/guardium-insights"
+    tag: "v11.5.3"
+    secret: "estap-secret-test-10"
+    secretWriterServiceAccountName: "estap-secret-writer-test-10"
