@@ -1,4 +1,4 @@
-name: guardium-estap-test03 # Argo CD application resource name
+name: guardium-estap-test-07 # Argo CD application resource name
 project: default # Argo CD project
 namespace: user1-bgd # Ensures namespace in destination cluster exists. 
 
@@ -22,5 +22,5 @@ values: |-
     imagePullPolicy: IfNotPresent
     dockerRegistryPrefix: "icr.io/guardium-insights"
     tag: "v11.5.3"
-    secret: "estap-secret-test-03"
-    secretWriterServiceAccountName: "estap-secret-writer-test-03"
+    secret: "estap-secret-test-07"
+    secretWriterServiceAccountName: "estap-secret-writer-test-07"
