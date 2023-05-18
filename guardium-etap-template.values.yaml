@@ -7,11 +7,11 @@ namespace: user1-bgd # Ensures namespace in destination cluster exists.
 values: |-
   estap:
     db:
-      host: "{DB_IP}"
+      host: "{DB_HOST}"
       port: {DB_PORT}
       type: "{DB_TYPE}"
     guardium:
-      host: "20.246.81.102"
+      host: "{GUARDIUM_HOST}"
     proxy:
       listen_port: {DB_PORT}
     replicas: 1
