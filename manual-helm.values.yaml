@@ -1,0 +1,19 @@
+estap:
+  db:
+    host: "sqlserver02.database.windows.net"
+    port: 1433
+    type: "mssql"
+  guardium:
+    host: "20.246.81.102"
+  proxy:
+    listen_port: 1433
+  replicas: 1
+  serviceAccountName: default
+  fsGroup: 1000690000
+  uid: 1000690000
+global:
+  imagePullPolicy: IfNotPresent
+  dockerRegistryPrefix: "icr.io/guardium-insights"
+  tag: "v11.5.3"
+  secret: "estap-secret-test-manual"
+  secretWriterServiceAccountName: "estap-secret-writer-test-manual"
