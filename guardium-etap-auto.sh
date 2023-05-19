@@ -1,5 +1,5 @@
 # estap PARAMETERS
-NAME_SUFFIX=test-12
+NAME_SUFFIX=test-14
 GUARDIUM_HOST=20.246.81.102
 DB_HOST=sqlserver02.database.windows.net
 DB_PORT=1433
